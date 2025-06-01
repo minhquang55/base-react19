@@ -1,38 +1,24 @@
-"use client"
-
-import { type LucideIcon } from "lucide-react"
-import { useLocation, useNavigate } from 'react-router-dom'
+import { map } from "lodash-es"
+import { useLocation, useNavigate } from "react-router-dom"
 
 import {
   SidebarGroup,
   SidebarGroupLabel,
   SidebarMenu,
   SidebarMenuButton,
-  SidebarMenuItem
+  SidebarMenuItem,
 } from "@/components/ui/sidebar"
+import type { MenuGroup } from "@/types/common.type"
 
-export function NavMain({
-  items,
-}: {
-  items: {
-    title: string
-    url: string
-    icon?: LucideIcon
-    isActive?: boolean
-    items?: {
-      title: string
-      url: string
-    }[]
-  }[]
-}) {
+export function NavMain({ items }: { readonly items: MenuGroup }) {
   const location = useLocation()
   const navigate = useNavigate()
   return (
     <SidebarGroup>
-      <SidebarGroupLabel>Platform</SidebarGroupLabel>
+      <SidebarGroupLabel>{items.group}</SidebarGroupLabel>
       <SidebarMenu>
-        {items.map((item, index) => (
-          <SidebarMenuItem key={index}>
+        {map(items.children, (item) => (
+          <SidebarMenuItem key={item.url}>
             <SidebarMenuButton
               tooltip={item.title}
               isActive={location.pathname === item.url}
