@@ -2,7 +2,7 @@ import { Bell, ChevronDown, LogOut, Settings, User } from "lucide-react"
 import { Suspense } from "react"
 import { Navigate, Outlet } from "react-router-dom"
 
-import { Badge } from "@/components/ui/badge"
+import { Badge } from "@/components/shared/ui/badge"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -10,14 +10,14 @@ import {
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
-import { ScrollArea } from "@/components/ui/scroll-area"
-import { Separator } from "@/components/ui/separator"
-import { SidebarInset, SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
+} from "@/components/shared/ui/dropdown-menu"
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/shared/ui/popover"
+import { ScrollArea } from "@/components/shared/ui/scroll-area"
+import { Separator } from "@/components/shared/ui/separator"
+import { SidebarInset, SidebarProvider, SidebarTrigger } from "@/components/shared/ui/sidebar"
+import { ROUTES } from "@/constants/routes"
 import { AppSidebar } from "@/layouts/components/app-sidebar"
 import authStore from "@/stores/auth.store"
-import { PATHS } from "@/utils/constants"
 
 export default function AppLayout() {
   const auth = authStore.use.auth()
@@ -37,7 +37,7 @@ export default function AppLayout() {
   const notificationCount = notifications.length
 
   if (!auth) {
-    return <Navigate to={PATHS.LOGIN} replace />
+    return <Navigate to={ROUTES.AUTH.LOGIN} replace />
   }
 
   return (
@@ -118,8 +118,12 @@ export default function AppLayout() {
             </div>
           }
         >
-          <div className="flex flex-1 flex-col gap-4 p-4">
-            <Outlet />
+          <div className="flex flex-1 flex-col gap-4 px-4 bg-neutral-100">
+            <div className="@container/main flex flex-1 flex-col gap-2">
+              <div className="flex flex-col gap-4 py-4 md:gap-6 md:py-6">
+                <Outlet />
+              </div>
+            </div>
           </div>
         </Suspense>
       </SidebarInset>

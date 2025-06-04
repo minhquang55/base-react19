@@ -1,54 +1,103 @@
-# React + TypeScript + Vite
+# React Base
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern React application template with TypeScript, Vite, and best practices.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ⚡️ [Vite](https://vitejs.dev/) - Next Generation Frontend Tooling
+- 🔥 [React](https://reactjs.org/) - A JavaScript library for building user interfaces
+- 💎 [TypeScript](https://www.typescriptlang.org/) - JavaScript with syntax for types
+- 📦 [pnpm](https://pnpm.io/) - Fast, disk space efficient package manager
+- 🎨 [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework
+- 🔍 [ESLint](https://eslint.org/) - Pluggable JavaScript linter
+- 💖 [Prettier](https://prettier.io/) - Code formatter
+- 🧪 [Vitest](https://vitest.dev/) - Testing framework
+- 🌐 [i18next](https://www.i18next.com/) - Internationalization framework
+- 📊 [React Query](https://tanstack.com/query/latest) - Data fetching and caching
+- 🎯 [Zustand](https://github.com/pmndrs/zustand) - State management
+- 📝 [React Hook Form](https://react-hook-form.com/) - Form validation
+- 🔒 [Zod](https://zod.dev/) - TypeScript-first schema validation
 
-## Expanding the ESLint configuration
+## 📦 Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+```bash
+# Install dependencies
+pnpm install
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+# Start development server
+pnpm dev
+
+# Build for production
+pnpm build
+
+# Preview production build
+pnpm preview
+
+# Run tests
+pnpm test
+
+# Run tests with coverage
+pnpm test:coverage
+
+# Lint code
+pnpm lint
+
+# Format code
+pnpm format
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🏗 Project Structure
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
 ```
+src/
+├── api/          # API calls and services
+├── assets/       # Static assets
+├── components/   # UI components
+├── config/       # Configuration files
+├── constants/    # Application constants
+├── hooks/        # Custom hooks
+├── layouts/      # Layout components
+├── lib/          # Utility libraries
+├── locales/      # i18n translations
+├── pages/        # Page components
+├── router/       # Routing configuration
+├── schemas/      # Zod schemas
+├── stores/       # Zustand stores
+├── test/         # Test setup and utilities
+├── types/        # TypeScript types
+└── utils/        # Utility functions
+```
+
+## 🧪 Testing
+
+The project uses Vitest and React Testing Library for testing. Tests are organized in the following structure:
+
+```
+src/
+├── __tests__/
+│   ├── unit/     # Unit tests
+│   ├── integration/  # Integration tests
+│   └── e2e/      # End-to-end tests
+```
+
+## 📝 Coding Conventions
+
+- Use TypeScript for type safety
+- Follow ESLint and Prettier configurations
+- Write tests for new features
+- Use functional components with hooks
+- Follow the project's file structure
+- Use meaningful variable and function names
+- Write clear and concise comments
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

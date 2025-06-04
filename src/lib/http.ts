@@ -2,8 +2,10 @@ import axios, { type AxiosInstance, type AxiosRequestConfig, type CustomParamsSe
 import { includes, isUndefined } from "lodash-es"
 import qs from "qs"
 
+import { API_BASE_URL, API_STATUS } from "@/constants/api"
+import { LOGOUT_MESSAGE_CODE } from "@/constants/common"
+import { ROUTES } from "@/constants/routes"
 import authStore from "@/stores/auth.store"
-import { API_STATUS, LOGOUT_MESSAGE_CODE, PATHS } from "@/utils/constants"
 import { localStorageServices } from "@/utils/localStorageServices"
 
 interface HttpClientRequestConfig extends AxiosRequestConfig {
@@ -20,7 +22,7 @@ const defaultConfig: AxiosRequestConfig = {
     "Content-Type": "application/json",
     "X-Requested-With": "XMLHttpRequest",
   },
-  baseURL: import.meta.env.VITE_REACT_APP_API_URL + "/api/v1",
+  baseURL: API_BASE_URL,
   paramsSerializer: {
     serialize: qs.stringify as unknown as CustomParamsSerializer,
   },
@@ -84,7 +86,7 @@ class HttpClient {
                 })
                 .catch((error) => {
                   HttpClient.requests = []
-                  if (!window.location.pathname.includes(PATHS.LOGIN)) {
+                  if (!window.location.pathname.includes(ROUTES.AUTH.LOGIN)) {
                     authStore.getState().clearAuth()
                   }
                   return Promise.reject(error instanceof Error ? error : new Error(String(error)))

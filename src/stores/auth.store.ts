@@ -1,11 +1,11 @@
 import { create } from "zustand"
 import { persist } from "zustand/middleware"
 
+import { ROUTES } from "@/constants/routes"
 import { USER_PROFILE } from "@/hooks/queries/useAuthQuery"
 import { queryClient } from "@/lib/react-query"
 import createSelectors from "@/lib/zustand-selectors"
 import { router } from "@/router/router"
-import { PATHS } from "@/utils/constants"
 
 export type TAuth = {
   id: string
@@ -35,7 +35,7 @@ const useAuthStore = create<AuthState & AuthAction>()(
         localStorage.clear()
         set((state) => ({ ...state, auth: undefined }))
         queryClient.setQueryData([USER_PROFILE], null)
-        router.navigate(PATHS.LOGIN)
+        router.navigate(ROUTES.AUTH.LOGIN)
       },
     }),
     {

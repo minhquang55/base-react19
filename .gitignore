@@ -5,6 +5,9 @@
 /build
 /dist
 
+# cursor rules
+/.cursor
+
 # misc
 .DS_Store
 .env

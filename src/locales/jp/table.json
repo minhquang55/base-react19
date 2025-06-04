@@ -1,0 +1,24 @@
+{
+  "simpleTable": {
+    "title": "シンプルテーブル",
+    "searchForm": {
+      "groups": "部署",
+      "roles": "役割",
+      "name": "名前",
+      "email": "メールアドレス", 
+      "status": "ステータス",
+      "createdAt": "作成日時"
+    }
+  },
+  "selectedTable": {
+    "title": "選択テーブル",
+    "searchForm": {
+      "groups": "部署",
+      "roles": "役割",
+      "name": "名前",
+      "email": "メールアドレス",
+      "status": "ステータス",
+      "createdAt": "作成日時"
+    }
+  }
+}

@@ -1,7 +1,7 @@
-import { AlertExample } from "@/components/example/alert-example"
-import { ApiExample } from "@/components/example/api-example"
-import { ChartExample } from "@/components/example/chart-example"
-import { DialogExample } from "@/components/example/dialog-example"
+import { AlertExample } from "@/components/features/example/alert-example"
+import { ApiExample } from "@/components/features/example/api-example"
+import { ChartExample } from "@/components/features/example/chart-example"
+import { DialogExample } from "@/components/features/example/dialog-example"
 
 export const Example = () => {
   return (

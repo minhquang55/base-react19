@@ -1,7 +1,7 @@
 import { z } from "zod"
 
+import { vStringEmail, vStringRequired } from "@/constants/validates"
 import i18n from "@/lib/i18n"
-import { vStringEmail, vStringRequired } from "@/utils/validates"
 
 export const LOGIN_SCHEMA = z.object({
   email: vStringEmail(i18n.t("object:email")),

@@ -13,9 +13,9 @@ import {
   SidebarMenuItem,
   SidebarRail,
   useSidebar,
-} from "@/components/ui/sidebar"
+} from "@/components/shared/ui/sidebar"
+import { MENU_ITEMS } from "@/constants/side-bar"
 import { NavMain } from "@/layouts/components/nav-main"
-import { MENU_ITEMS } from "@/utils/constants"
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const { state } = useSidebar()

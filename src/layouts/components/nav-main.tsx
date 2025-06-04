@@ -7,7 +7,7 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from "@/components/ui/sidebar"
+} from "@/components/shared/ui/sidebar"
 import type { MenuGroup } from "@/types/common.type"
 
 export function NavMain({ items }: { readonly items: MenuGroup }) {

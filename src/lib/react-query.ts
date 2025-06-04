@@ -2,8 +2,8 @@
 import { type DefaultOptions, type UseMutationOptions, type UseQueryOptions, QueryClient } from "@tanstack/react-query"
 import { AxiosError } from "axios"
 
+import { API_STATUS } from "@/constants/api"
 import type { ResponseError } from "@/types/common.type"
-import { API_STATUS } from "@/utils/constants"
 
 const queryConfig: DefaultOptions = {
   queries: {

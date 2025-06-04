@@ -1,23 +1,26 @@
 import { createBrowserRouter } from "react-router-dom"
 
-import { ErrorFallback } from "@/components/common/ErrorFallback"
+import { ErrorFallback } from "@/components/shared/common/error-fallback"
+import { GuestRoute } from "@/components/shared/routes/GuestRoute"
+import { ProtectedRoute } from "@/components/shared/routes/ProtectedRoute"
+import { ROUTES } from "@/constants/routes"
 import AppLayout from "@/layouts/AppLayout"
 import { lazyImport } from "@/lib/lazy-import"
-import { GuestRoute } from "@/router/GuestRoute"
-import { ProtectedRoute } from "@/router/ProtectedRoute"
 
 const { Login } = lazyImport(() => import("@/pages/auth/login"), "Login")
 const { Dashboard } = lazyImport(() => import("@/pages/dashboard/dashboard"), "Dashboard")
 const { Example } = lazyImport(() => import("@/pages/example/example"), "Example")
-const { ExampleList } = lazyImport(() => import("@/pages/example/example-list"), "ExampleList")
+const { SimpleTablePage } = lazyImport(() => import("@/pages/table/simple-table-page"), "SimpleTablePage")
+const { SelectedTablePage } = lazyImport(() => import("@/pages/table/selected-table-page"), "SelectedTablePage")
+
 
 export const router = createBrowserRouter([
   {
-    path: "/",
+    path: ROUTES.HOME,
     element: <AppLayout />,
     children: [
       {
-        path: "/",
+        path: ROUTES.HOME,
         element: (
           <ProtectedRoute>
             <Dashboard />
@@ -25,7 +28,7 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: "/example",
+        path: ROUTES.EXAMPLE,
         element: (
           <ProtectedRoute>
             <Example />
@@ -33,17 +36,25 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: "/sample-list",
+        path: ROUTES.TABLE.SIMPLE,
         element: (
           <ProtectedRoute>
-            <ExampleList />
+            <SimpleTablePage />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: ROUTES.TABLE.SELECTED,
+        element: (
+          <ProtectedRoute>
+            <SelectedTablePage />
           </ProtectedRoute>
         ),
       },
     ],
   },
   {
-    path: "/login",
+    path: ROUTES.AUTH.LOGIN,
     element: (
       <GuestRoute>
         <Login />
