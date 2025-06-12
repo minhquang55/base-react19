@@ -1,103 +1,29 @@
 # React Base
 
-A modern React application template with TypeScript, Vite, and best practices.
+Một template React hiện đại với TypeScript, Vite và các best practices.
 
-## 🚀 Features
+## 🚀 Tính năng
 
-- ⚡️ [Vite](https://vitejs.dev/) - Next Generation Frontend Tooling
-- 🔥 [React](https://reactjs.org/) - A JavaScript library for building user interfaces
-- 💎 [TypeScript](https://www.typescriptlang.org/) - JavaScript with syntax for types
-- 📦 [pnpm](https://pnpm.io/) - Fast, disk space efficient package manager
-- 🎨 [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework
-- 🔍 [ESLint](https://eslint.org/) - Pluggable JavaScript linter
+- ⚡️ [Vite](https://vitejs.dev/) - Công cụ build frontend thế hệ mới
+- 🔥 [React](https://reactjs.org/) - Thư viện JavaScript để xây dựng giao diện người dùng
+- 💎 [TypeScript](https://www.typescriptlang.org/) - JavaScript với cú pháp cho types
+- 📦 [pnpm](https://pnpm.io/) - Package manager nhanh, tiết kiệm dung lượng
+- 🎨 [Tailwind CSS](https://tailwindcss.com/) - Framework CSS utility-first
+- 🔍 [ESLint](https://eslint.org/) - Công cụ linting JavaScript
 - 💖 [Prettier](https://prettier.io/) - Code formatter
 - 🧪 [Vitest](https://vitest.dev/) - Testing framework
-- 🌐 [i18next](https://www.i18next.com/) - Internationalization framework
-- 📊 [React Query](https://tanstack.com/query/latest) - Data fetching and caching
+- 🌐 [i18next](https://www.i18next.com/) - Framework đa ngôn ngữ
+- 📊 [React Query](https://tanstack.com/query/latest) - Data fetching và caching
 - 🎯 [Zustand](https://github.com/pmndrs/zustand) - State management
 - 📝 [React Hook Form](https://react-hook-form.com/) - Form validation
-- 🔒 [Zod](https://zod.dev/) - TypeScript-first schema validation
+- 🔒 [Zod](https://zod.dev/) - Schema validation TypeScript-first
 
-## 📦 Installation
+## 📚 Documentation
 
-```bash
-# Install dependencies
-pnpm install
-
-# Start development server
-pnpm dev
-
-# Build for production
-pnpm build
-
-# Preview production build
-pnpm preview
-
-# Run tests
-pnpm test
-
-# Run tests with coverage
-pnpm test:coverage
-
-# Lint code
-pnpm lint
-
-# Format code
-pnpm format
-```
-
-## 🏗 Project Structure
-
-```
-src/
-├── api/          # API calls and services
-├── assets/       # Static assets
-├── components/   # UI components
-├── config/       # Configuration files
-├── constants/    # Application constants
-├── hooks/        # Custom hooks
-├── layouts/      # Layout components
-├── lib/          # Utility libraries
-├── locales/      # i18n translations
-├── pages/        # Page components
-├── router/       # Routing configuration
-├── schemas/      # Zod schemas
-├── stores/       # Zustand stores
-├── test/         # Test setup and utilities
-├── types/        # TypeScript types
-└── utils/        # Utility functions
-```
-
-## 🧪 Testing
-
-The project uses Vitest and React Testing Library for testing. Tests are organized in the following structure:
-
-```
-src/
-├── __tests__/
-│   ├── unit/     # Unit tests
-│   ├── integration/  # Integration tests
-│   └── e2e/      # End-to-end tests
-```
-
-## 📝 Coding Conventions
-
-- Use TypeScript for type safety
-- Follow ESLint and Prettier configurations
-- Write tests for new features
-- Use functional components with hooks
-- Follow the project's file structure
-- Use meaningful variable and function names
-- Write clear and concise comments
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+* **[Getting Started](docs/getting-started.md)**
+* **[Architecture](docs/architecture.md)**
+* **[Styling](docs/styling.md)**
+* **[State Management](docs/state-management.md)**
+* **[API & Services](docs/api-services.md)**
+* **[Custom Hooks](docs/hooks.md)**
+* **[Internationalization](docs/i18n.md)**
